@@ -3,68 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Assignment-5</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	 <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(-37.8324, 174.8054),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+<title>Endless Summer Surf School</title>
 </head>
 
 <body>
 
-<header>
+<header style="position: relative;">
 	<div class="wrapper">
-		<div class="col-1-2">
-			<h1><a href="#"><img src="" alt=""></a></h1>
+		<div class="row">
+			<div class="col-1-2">
+				<a href="#"><img src="img/logo-blue.png" alt="" width="100"></a>
+			</div>
+			<nav class="col-1-2">
+				<ul>
+					<li><a href="#"></a>Home</li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#instructors">Instructors</a></li>
+					<li><a href="#location">Location</a></li>
+				</ul>
+			</nav>
 		</div>
-		<nav class="col-1-2">
-			<ul>
-				<li><a href="#"></a></li>
-				<li><a href="#about"></a></li>
-				<li><a href="#services"></a></li>
-				<li><a href="#instructors"></a></li>
-				<li><a href="#location"></a></li>
-			</ul>
-		</nav>
 	</div>
-	<div class="col-1-2"><!--Would this really be 1/2????-->
-		<h2>Endless Summer Surf School</h2><!--Would this be an h2 or p????-->
-		<p>We cultivate a love and respect for the ocean by building
-		confidence, developing character and inspiring stoke through
-		safety, fun and learning.</p>
-	</div>
-	<div class="col-"><!--What would this be technically????-->
+	
+	
+	
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 100 20" > 
+			
+			<!-- 100 sets the width of the image area, 20 sets the height of the image area --> 
+			<defs>
+				<pattern id="wave" patternUnits="userSpaceOnUse" width="4" height="4">
+					<image xlink:href="img/bg-ptrn.jpg" width="400" height="400" />
+				</pattern>
+			</defs>
+			<!-- the code above defines the image pattern, the green texture, that is going to be used to fill the path below. The image will need to be modified to have seamless edges to repeat without being obvious-->
+
+			<path d="M0 25 V12 Q30 17 55 12 T100 11 V25z" fill="url(#wave)" />
+			<!-- the d="" defines the wave direction and curve. I'd recommend modifying this in browser to see how it behaves quickly and easily. I can demonate this tomorrow in class --> 
+
+
+		</svg>
+	<div id="intro">
+				<div class="wrapper">
+					<div class="col-4-7">
+						<h1>Endless Summer<br> Surf School</h1>
+						<p>We cultivate a love and respect for the ocean by building
+						confidence, developing character and inspiring stoke through
+						safety, fun and learning.</p>
+					</div>
+				</div>
+			</div>
+	
+	
+	<div id="bg-green">
+		<div class="wrapper">
+			<div class="col-2-3 cntr-blk">
 		<p>Endless Summer Surf School offers programs to complete beginners, intermediate
 		and advanced surfers of any age.</p>
-	</div>
-	<div class="col-"><!--Would this be a different column count???-->
 		<p>Come on a learn to surf journey of a lifetime in Manu Bay as we set off on a half day
 		adventure. Sit back and relax after we pick you up from your accommodation and
 		begin the search.</p>
+			</div>
+		</div>
 	</div>
-</header>
+</header>	
 	
-<section id="about" class="wrapper row">
+<section id="about" class="wrapper row flex-col-2">
 	<div class="col-1-4">
-		<img src="" alt="">
-		<p>With each lesson we cover Ocean
-		safety. This ensures at the end of your
+		<img src="img/icon-check.png" alt="">
+		<p><span>With each lesson we cover ocean
+		safety.</span> This ensures at the end of your
 		experience you have knowledge to
 		know where is a safe area to surf or
 		swim for the future</p>
 	</div>
 	<div class="col-1-4">
-		<img src="" alt="">
+		<img src="img/icon-surfboard.png" alt="">
 		<p>We have over <span>80 fun safe soft
 		surfboards and intermediate to
 		advanced boards</span> that will help you to
 		learn faster and catch lots of waves.</p>
 	</div>
 	<div class="col-1-4">
-		<img src="" alt="">
+		<img src="img/icon-certify.png" alt="">
 		<p>We are the only Manu Bay surf school to
 		have surf school <span>permits to teach
 		personal private lessons &amp; group
 		lessons in both Manu &amp; Whale Bay.</span></p>
 	</div>
 	<div class="col-1-4">
-		<img src="" alt="">
+		<img src="img/icon-confidence.png" alt="">
 		<p>Our lessons are specifically designed to
 		teach you to surf at your own pace in a
 		relaxed environment to <span>build further
@@ -74,44 +120,249 @@
 	</div>
 </section>
 	
-<section id="services" class="bg-green wrapper row">
-	<p>Sign up for enew letter</p>
-	<form>
+<div class="bg-green wrapper row">
+	<div class="col-1-3">
+		<p>Sign up for enews letter</p>
+	</div>
+	<form class="bg-blue col-2-3">
 		<label for="email"></label>
 		<input type="email" name="Email" id="email" placeholder="email">
-		<p><a href="#" class="btn-white">Submit</a></p>
+		<p><a href="#" class="btn-outline-wht">Submit</a></p>
 	</form>
-</section>
+</div>
 	
-<section>
+<section id="services" class="wrapper">
 	<header>
 		<h2>Packages</h2>
 	</header>
-	<p><span>All equipment is included with each lesson.</span><br>
-	We have top of the range learner boards that are very safe and help you to get
-	standing and surfing quickly, we provide O’Neill wetsuits in the winter months so
-	you are guaranteed to be warm throughout your session</p>
-	<div><!--How will this be a list???-->
-		
+	<div class="col-2-3">
+		<p><span>All equipment is included with each lesson.</span><br>
+		We have top of the range learner boards that are very safe and help you to get
+		standing and surfing quickly, we provide O’Neill wetsuits in the winter months so
+		you are guaranteed to be warm throughout your session</p>
 	</div>
+	<div class="wrapper row">
+		<div class="col-1-3 flex cntr-blk">
+			  <ul class="grid-child">
+				<li class="grid-item"><img src="img/icon-package-refresh.png" alt=""></li>
+				<li class="grid-item">Refresher<br>Course</li>
+				<li class="grid-item"><img src="img/icon-package-surfboards.png" alt=""></li>
+				<li class="grid-item">Different<br>Surfboards</li>
+				<li class="grid-item"><img src="img/icon-package-quick-tech.png" alt=""></li>
+				<li class="grid-item">Quick<br>Techniques</li>
+				<li class="grid-item"><img src="img/icon-package-location.png" alt=""></li>
+				<li class="grid-item">Different<br>Locations</li>
+				<li class="grid-item"><img src="img/icon-package-wave.png" alt=""></li>
+				<li class="grid-item">Outback<br>Techniques</li>
+				<li class="grid-item"><img src="img/icon-package-swave.png" alt=""></li>
+				<li class="grid-item">Unbroken<br>Waves</li>
+			  </ul>
+		</div>
+	</div>
+
+	<section class="row after">
+		<div class="5-8">
+			<header>
+				<h3><span>1/2 Day</span>Learn to Surf Adventure</h3>
+			</header>
+			<p>We will teach you all the necessary steps to get you up and surfing and riding waves on your first
+			lesson. Our Instructors use hands on teaching techniques to get you standing very quickly.</p>
+		</div>
+		<div class="col-1-4">
+			<ul>
+				<li>
+					<h4>Price</h4>
+					<p>$65</p>
+				</li>
+				<li>
+					<h4>Duration</h4>
+					<p>1 Day</p>
+				</li>
+				<li>
+					<h4>Hours</h4>
+					<p>4 Hours</p>
+				</li>
+			</ul>
+			<ul>
+				<li><img src="img/icon-package-refresh.png" alt=""></li>
+			</ul>
+		</div>
+		<p><a href="#" class="btn-blue">Book</a></p>
+	</section>
+
+	<section class="row before">
+		<div class="5-8">
+			<header>
+				<h3><span>2 Day</span>Progressive Lesson</h3>
+			</header>
+			<p>The two day course is a natural continuation from your first surf lesson and we aim to improve
+			stance, Pop up technique and introduce paddling. The aim of lesson two is to improve consistency
+			and length of ride so we focus on weight distribution how to slow and speed the surfboard up.</p>
+		</div>
+		<div class="col-1-4">
+			<ul>
+				<li>
+					<h4>Price</h4>
+					<p>$115</p>
+				</li>
+				<li>
+					<h4>Duration</h4>
+					<p>2 Day</p>
+				</li>
+				<li>
+					<h4>Hours</h4>
+					<p>4 Hours</p>
+				</li>
+			</ul>
+			<ul>
+				<li><img src="img/icon-package-refresh.png" alt=""></li>
+				<li><img src="img/icon-package-quick-tech.png" alt=""></li>
+			</ul>
+		</div>
+		<p><a href="#" class="btn-blue">Book</a></p>
+	</section>
+
+	<section class="row after">
+		<div class="5-8">
+			<header>
+				<h3><span>3 Day</span>Ultimate Wave Rider</h3>
+			</header>
+			<p>The three day course is a really fun technical course as we get lots of time to show you a wide
+			range of techniques and you get lots of water time to perfect your new skills. We aim to improve
+			Paddling technique and timing, Pop up technique, stance and work on slowing and speeding up
+			your surfboard, and introduce a Frontside turn and a Backside turn and help you practice both
+			turns in the water.</p>
+		</div>
+		<div class="col-1-4">
+			<ul>
+				<li>
+					<h4>Price</h4>
+					<p>$155</p>
+				</li>
+				<li>
+					<h4>Duration</h4>
+					<p>3 Day</p>
+				</li>
+				<li>
+					<h4>Hours</h4>
+					<p>4 Hours</p>
+				</li>
+			</ul>
+			<ul>
+				<li><img src="img/icon-package-refresh.png" alt=""></li>
+				<li><img src="img/icon-package-quick-tech.png" alt=""></li>
+				<li><img src="img/icon-package-location.png" alt=""></li>
+			</ul>
+		</div>
+		<p><a href="#" class="btn-blue">Book</a></p>
+	</section>
+
+	<section class="row before">
+		<div class="5-8">
+			<header>
+				<h3><span>4 Day</span>Epic Surf Experience</h3>
+			</header>
+			<p>When you are confident at turning your board both ways we introduce S-turns (This is doing
+			multiple turns on one wave) and surfing with Flow!</p>
+		</div>
+		<div class="col-1-4">
+			<ul>
+				<li>
+					<h4>Price</h4>
+					<p>$185</p>
+				</li>
+				<li>
+					<h4>Duration</h4>
+					<p>4 Day</p>
+				</li>
+				<li>
+					<h4>Hours</h4>
+					<p>4 Hours</p>
+				</li>
+			</ul>
+			<ul>
+				<li><img src="img/icon-package-refresh.png" alt=""></li>
+				<li><img src="img/icon-package-quick-tech.png" alt=""></li>
+				<li><img src="img/icon-package-location.png" alt=""></li>
+				<li><img src="img/icon-package-swave.png" alt=""></li>
+			</ul>
+		</div>
+		<p><a href="#" class="btn-blue">Book</a></p>
+	</section>
+
+	<section class="row after">
+		<div class="5-8">
+			<header>
+				<h3><span>5 Day</span>Deluxe Package</h3>
+			</header>
+			<p>This package is aimed at people who really want to get into surfing as each lesson is different and
+			the course is packed with content. Our guides love teaching the 5 day course as we can really see
+			people’s progression from the start of the week to the end.This course is suited for all ages and
+			abilities as we will show you a wide range of techniques to make you a competent surfer! Finish on
+			a high note with your last session completely tailored to your individual needs to really get the most
+			out of your surfing.</p>
+		</div>
+		<div class="bg-green ">
+			<p>Our most popular package</p>
+		</div>
+		<div class="col-1-4">
+			<ul>
+				<li>
+					<h4>Price</h4>
+					<p>$320</p>
+				</li>
+				<li>
+					<h4>Duration</h4>
+					<p>4 Day</p>
+					<p>1 Day</p>
+				</li>
+				<li>
+					<h4>Hours</h4>
+					<p>4 Hours</p>
+					<p>2.5 Hours</p>
+				</li>
+			</ul>
+			<ul>
+				<li><img src="img/icon-package-refresh.png" alt=""></li>
+				<li><img src="img/icon-package-surfboards.png" alt=""></li>
+				<li><img src="img/icon-package-quick-tech.png" alt=""></li>
+				<li><img src="img/icon-package-location.png" alt=""></li>
+				<li><img src="img/icon-package-wave.png" alt=""></li>
+				<li><img src="img/icon-package-swave.png" alt=""></li>
+			</ul>
+		</div>
+		<p><a href="#" class="btn-blue">Book</a></p>
+	</section>
+	
+	<p>Buy a package and get 50% off dinner!</p>
+	<p>If you buy a package you receive a Half price dinner voucher and complimentary drink at a local restaurant for
+	each lesson.</p>
+	
 </section>
+	
+<div class="bg-green wrapper row">
+	<div class="col-1-2">
+		<p>Here's an article to get you ready for your surf adventure!</p>
+	</div>
+	<p><a href="#" class="btn-outline-wht">Read Now</a></p>
+</div>
 	
 <section id="instructors" class="wrapper row">
 	<div class="col-1-3">
-		<img src="" alt="">
+		<img src="img/icon-accrdited.png" alt="">
 		<p>All of our surf coaches hold a current Surfing New
 		Zealand coaching accreditation and APOLA Beach
 		lifeguard certification.</p>
 	</div>
 	<div class="col-1-3">
-		<img src="" alt="">
+		<img src="img/icon-list.png" alt="">
 		<p>Our team of instructors are career surf guides with a
 		minimum of 10 years coaching background and 15
 		years personal surfing experience both in New
 		Zealand and overseas</p>
 	</div>
 	<div class="col-1-3">
-		<img src="" alt="">
+		<img src="img/icon-brain.png" alt="">
 		<p>All instructors have vast knowledge of the local area
 		and will only conduct lessons in surf conditions in
 		waist deep water with easy spilling broken waves
@@ -121,46 +372,46 @@
 	
 <div class="wrapper row">	
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-wave-catcher.jpg" alt="">	
 	</div>
 
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-relax.jpg" alt="">	
 	</div>
 
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-barrel.jpg" alt="">	
 	</div>
 
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-board.jpg" alt="">	
 	</div>
 
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-sunset.jpg" alt="">	
 	</div>
 
 	<div class="col-1-6">
-		<img src="" alt="">	
+		<img src="img/gallery-chillin.jpg" alt="">	
 	</div>
 </div>
 	
 <div class="wrapper">
 	<div class="col-1-2" id="map"></div>
 	<div class="row">
+		<div class="col-2-3"><!--Push right in large-->
+			<p>As a mobile surf school we are dedicated to finding the
+			best, fun and safest waves daily. We have over 10
+			different locations at our fingertips, ready for the
+			ultimate learn to surf experience. Our beaches are the
+			best in New Zealand, you will learn in waist deep water
+			with easy to ride small waves.</p>
+		</div>
 		<div class="col-1-3">
 			<p>5B Whaanga Rd,<br>
 			Raglan 3297<br>
 			New Zealand<br>
 			+64 7-825 7873</p>
-		</div>
-		<div class="col-2-3">
-			<p>As a mobile surf school we are dedicated to finding the
-		best, fun and safest waves daily. We have over 10
-		different locations at our fingertips, ready for the
-		ultimate learn to surf experience. Our beaches are the
-		best in New Zealand, you will learn in waist deep water
-		with easy to ride small waves.</p>
 		</div>
 	</div>
 	<div class="col-1-2">
@@ -181,27 +432,55 @@
 				<label for="message">Your message:</label>
 				<textarea id="message" name="message" rows="7"></textarea>
 				<div>
-					<a href="#">Submit</a>
+					<a href="#" id="btn-outline-blue">Submit</a>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
 	
-<footer>
-	<div class="col-">
-		<img src="" alt="">
+<footer class="wrapper row">
+	<div class="col-1-3">
+		<img src="img/logo-wht.png" alt="">
 	</div>
-	<div class="col-"><!--Add in icons from font awesome-->
-		<img src="" alt="">
+	<div class="col-1-3">
+		<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+		<a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 	</div>
-	<div class="col-">
+	<div class="col-1-3">
 		<p>5B Whaanga Rd,<br>
 		Raglan 3297<br>
 		New Zealand<br>
 		+64 7-825 7873</p>
 	</div>
 </footer>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+<script>
+jQuery(document).ready(function($){
+	
+	// Smooth scroll home nav
+		$('#smooth-scroll').on('click', 'a', function(e) {
+			// prevent default anchor click behavior
+   			e.preventDefault();
+		
+		   // store hash
+		   var hash = this.hash;
+			
+			$('html, body').animate({
+			   scrollTop: $(this.hash).offset().top-0
+			 }, 500, function(){
+		
+			   // when done, add hash to url
+			   // (default click behaviour)
+			   window.location.hash = hash;
+			 });
+		
+		});
+
+	
+});
+</script>
 	
 </body>
 </html>

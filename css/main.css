@@ -26,8 +26,7 @@
 	5.3 - Text Sizes
 	5.4 - Alignments
 6.0 - Responsive / Media Queries
-	6.1 - Medium Display
-	6.2 - Small Display
+	6.1 - Small Display
 --------------------------------------------------------------*/
 
 *, *:after, *:before {
@@ -37,6 +36,23 @@
 	-o-: border-box;
 	box-sizing: border-box;
 }
+
+/*--------------------------------------------------------------
+1.0 - Typography
+-------------------------------------------------------------- */
+
+.col-4-7{
+	float: none;
+	margin: 0 132px;
+}
+
+/*--------------------------------------------------------------
+1.1 - Headings
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+1.2 - Body Copy
+-------------------------------------------------------------- */
 
 /*--------------------------------------------------------------
 3.0 - Content
@@ -56,6 +72,48 @@
 	display: table;
 	clear: both;
 }
+
+/*Grid Code*/
+.cntr-blk {
+	float: none;
+	margin: 0 auto;
+}
+
+
+.flex ul {
+	padding: 0;
+}
+
+.flex li:nth-child(odd){
+	text-align: center;
+}
+
+
+.flex, .flex-col-2 {
+  	display: flex;
+}
+
+.flex-col-2{
+	flex-flow: row wrap;
+}
+
+.flex [class*='col-'] {
+  flex: 1;
+}
+
+.flex .grid-child {
+  	display: grid;
+	width: 100%;
+  	grid-template-columns: 50px auto 50px auto 50px auto; 
+	grid-template-rows: 50px;/* just ignore validation issue for now. In web III you'll discuss polyfills for older browsers */ 
+}
+
+.grid-item  {
+  	width: 100%;
+  	white-space: nowrap;
+	display: inline-block;
+}
+
 
 /*PERMANT--------*/
 [class*='col-']{
@@ -189,62 +247,92 @@ figure {
     -webkit-margin-end: 0;
 }
 
+svg{
+  background: url(../img/bg-wave.png)no-repeat -300px center; /* This applies the cresting wave, the negative background position will need to be updated */ 
+	/* need vendor prefixes */ 
+  background-size:contain; /* allows the bg image to respond to browser  */ 
+  display: block; /* need to include so that the wave and next div touch to create a seamless background color*/ 
+}
+
+#bg-green {
+	background-image: url(../img/bg-ptrn.jpg);  /* applies the green background to the div where the text will be, this image will need to be updated to create a seamless repeating pattern  */ 
+	height: 300px; /* Once text is in place, remove and utilize padding or margin on text  */ 
+	padding: 20px 0; /* padding is necessary so that the margins on the text do not exceed the parent  */ 
+}
+
+#hero { /* this ID will not be necessary once you have a column structure in place */ 
+	width: 50%;
+	margin: 0 auto;
+	position: relative; /* you will need to work with positioning to push the text on top of the wave  */ 
+	top: 150px;
+	left: 0;
+}
+
+h1 {
+	text-indent: 30px;
+}
+
+
 /*--------------------------------------------------------------
 6.0 - Responsive / Media Queries
 -------------------------------------------------------------- */
 
-/*--------------------------------------------------------------
-6.1 - Medium Display
--------------------------------------------------------------- */
-
-@media screen and (max-width: 1024px){
-	.wrapper {
-		width: 90%;
-	}
-	
-	.col-3-4 + .col-1-4{
-		width: 25%;
-	}
-	
-	.col-1-4, .col-1-6, .col-5-6, .col-1-8, .col-1-10, .col-1-12, .col-5-8, .col-3-8, .col-9-10{
-		width: 50%;
-	}
-	
-	.col-1-5, .col-1-7, .col-1-9, .col-1-11{
-		width: 100%;
-	}
-	
-	.col-1-4:nth-child(even), .col-1-5,.col-1-6:nth-child(even), .col-2-5, .col-4-7, .col-5-6, .col-5-8, .col-5-9, .col-1-8:nth-child(even), .col-1-10:nth-child(even), .col-1-12:nth-child(even), .col-1-5, .col-1-7,.col-1-9, .col-1-11, .col-5-8, .col-3-8,.col-9-10, .col-8-11, .col-9-12{
-		padding-right: 0;
+@media screen and (min-width: 1024px){
+	#intro {
+		position: absolute; 
+		top: 140px; 
+		width: 100%; 
+		z-index: -10;
 	}
 }
 
+@media screen and (max-width: 1024px){
+	svg  {
+		display: none;
+	}
+	#intro{
+	background-image: url(../img/bg-ptrn.jpg);  /* applies the green background to the div where the text will be, this image will need to be updated to create a seamless repeating pattern  */ 
+	height: 300px; /* Once text is in place, remove and utilize padding or margin on text  */ 
+	padding: 20px 0; /* padding is necessary so that the margins on the text do not exceed the parent  */ 
+}
+}
+
 /*--------------------------------------------------------------
-6.2 - Small Display
+6.1 - Small Display
 -------------------------------------------------------------- */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 480px){
 	.wrapper {
 		width: 95%;
 	}
 	
-	.col-1-3, .col-2-3{
+	h1 {
+		text-indent: 0;
+	}
+	
+	h1 br{
+		display: none;
+	}
+
+	
+	.col-4-7{
+		margin: 0;
+	}
+	
+	.col-1-2, .col-1-3, .col-2-3, .col-4-7{
 		width: 100%;
+	}
+	
+	.col-1-4, .col-1-6{
+		width: 50%;
 	}
 	
 	.col-1-3, .col-2-3{
 		padding-right: 0; /*Will be grouped*/
 	}
+	
+	.flex .grid-child {
+  		grid-template-columns: 50px auto 50px auto;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
