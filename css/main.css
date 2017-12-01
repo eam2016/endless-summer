@@ -89,11 +89,11 @@
 }
 
 
-.flex, .flex-col-2 {
+.flex, .flex-1-2 {
   	display: flex;
 }
 
-.flex-col-2{
+.flex-1-2{
 	flex-flow: row wrap;
 }
 
@@ -272,6 +272,18 @@ h1 {
 	text-indent: 30px;
 }
 
+/*--------------------------------------------------------------
+5.0 - Utilities
+-------------------------------------------------------------- */
+
+.nf{
+	float: none;
+}
+
+#map{
+	height: 400px;
+}
+
 
 /*--------------------------------------------------------------
 6.0 - Responsive / Media Queries
@@ -310,7 +322,7 @@ h1 {
 		text-indent: 0;
 	}
 	
-	h1 br{
+	h1 br, img[src="img/logo-wht.png"]{
 		display: none;
 	}
 
