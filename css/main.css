@@ -30,41 +30,309 @@
 --------------------------------------------------------------*/
 
 *, *:after, *:before {
-	-webkit-: border-box;
-	-moz-: border-box;
-	-ms-: border-box;
-	-o-: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+html{
+	font-size: 20px;
+	background-color: #F4ECE9;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+body, nav ul li a, a[href="tel:+6478257873"], #btn-outline-blue, .bg-green .col-1-3 li a:hover, .bg-green a[href="tel:+6478257873"]:hover {
+	color: #1A434A;
 }
 
 /*--------------------------------------------------------------
 1.0 - Typography
 -------------------------------------------------------------- */
 
-.col-4-7{
-	float: none;
-	margin: 0 132px;
+h1, h2, input[placeholder="email"], .btn-outline-wht, #services .grid li, #pkg-lead-in, h3, .btn-blue, #services .col-1-3 > p, #btn-outline-blue, label{
+	text-transform: uppercase;
+}
+
+.flex li:nth-child(odd), h2, .col-2-3 p, .bg-green .col-1-2 p, #about .col-1-4, #services .col-1-3 > p, #instructors .col-1-3, #services div[class="col-1-2 cntr-blk"], #article, .bg-green .col-1-3 ul{
+	text-align: center;
+}
+
+.bg-green .col-2-3 p, #enews, .bg-green .col-1-2 p, .btn-outline-wht, .btn-blue, #services .col-1-3 > p, #btn-outline-blue:hover, .bg-green address p, .bg-green a[href="tel:+6478257873"], .bg-green .col-1-3 li a{
+	color: #F4ECE9;
+}
+
+a[href="tel:+6478257873"]:hover, h3 span, h4, #intro p{
+	color: #158F80;
+}
+
+#services .col-1-3  > p, .btn-blue, #btn-outline-blue:hover{
+	background-color: #158F80;	
+}
+
+h3 span, h4, #services .col-1-2 p:first-child{
+	margin-bottom: 0;
+}
+
+.bg-green address p, nav ul{
+	text-align: right;
+}
+
+h4, #services ul{
+	margin-top: 0;
 }
 
 /*--------------------------------------------------------------
 1.1 - Headings
 -------------------------------------------------------------- */
 
+h1 {
+	text-indent: 30px;
+	font: 700 3rem/3rem 'Oswald', sans-serif;
+	margin: .67em 60px 0;
+}
+
+h2{
+	font: 700 2rem/2rem 'Oswald', sans-serif;
+	letter-spacing: .125rem;
+}
+
+h3{
+	font: 600 1.25rem/1.25rem 'Oswald', sans-serif;
+	margin: 0 0 5px;
+}
+
+h3 span, h4{
+	font: 600 .5rem 'Work Sans', sans-serif;
+}
+
 /*--------------------------------------------------------------
 1.2 - Body Copy
 -------------------------------------------------------------- */
+
+#enews, #article p:first-child{
+	font: 400 1rem 'Oswald', sans-serif;
+	letter-spacing: 0;
+}
+
+#enews{
+	margin-top: 25px;
+}
+
+p{
+	font: 400 .625rem/1rem 'Work Sans', sans-serif;
+}
+
+strong{
+	font-weight: 700;
+}
+
+#intro p{
+	font: 600 1rem/1.125rem 'Work Sans', sans-serif;
+	padding: 0 90px 0 0;
+}
+
+.bg-green .col-2-3 p{
+	font: 700 .75rem 'Work Sans', sans-serif;
+}
+
+.bg-green .col-1-2 p{
+	margin-bottom: 70px;
+}
+
+#about .col-1-4{
+	margin: 70px 0;
+}
+
+#pkg-lead-in{
+	line-height: 2rem;
+}
+
+#services .col-1-2 p:first-child, #pkg-lead-in{
+	font: 500 .8rem 'Oswald', sans-serif;
+}
+
+#services header .col-2-3 p{
+	font: 500 .8rem 'Work Sans', sans-serif;
+}
+
+#services .col-1-3  > p{
+	padding: 7px;
+	font: 600 .7rem 'Oswald', sans-serif;
+	letter-spacing: .05rem;
+
+}
+
+#services .col-1-3  li p{
+	margin-top: 7px;
+}
+
+#article p:first-child{
+	margin-right: 20px;
+}
+
+#push-right p{
+	text-align: left;
+}
+
+address p{
+	margin: 0;
+}
+
+.bg-green address p:first-child{
+	margin-top: 20px;
+}
+
+#services .col-5-8 p{
+	margin: 0 0 30px;
+}
+
+/*--------------------------------------------------------------
+1.3 - Buttons
+-------------------------------------------------------------- */
+
+a{
+	text-decoration: none;
+}
+
+li, a{
+	list-style: none;
+}
+
+
+nav ul li a:hover{
+	color: #1CBAA6;
+}
+
+.btn-outline-wht, .btn-blue #btn-outline-blue{
+	font: 600 .65rem 'Work Sans', sans-serif;
+}
+
+.btn-outline-wht{
+    border: 2px solid #F4ECE9;
+}
+
+.btn-outline-wht:hover, .btn-blue:hover{
+	background-color: #147A6D;
+}
+
+.btn-blue, .btn-outline-wht, #btn-outline-blue{
+	padding: 10px 50px;
+}
+
+#btn-outline-blue{
+    border: 2px solid #158F80;
+}
+
+#btn-outline-blue:hover, .btn-outline-wht:hover, .btn-blue:hover{
+	border: none;
+}
+
+/*--------------------------------------------------------------
+1.4 - Forms
+-------------------------------------------------------------- */
+
+label[for="email"]{
+	display: none;
+}
+
+.bg-green form{
+	margin-top: 15px;
+}
+
+.bg-green form input{
+	padding-top: 20px;
+}
+
+.bg-green form input {
+    background-color: #147A6D;
+	padding: 14px;
+    border-width: none;
+    border-style: none;
+    border-color: none;
+    border-image: none;
+	margin: 0 40px 0 0;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font: 400 .60rem 'Oswald', sans-serif;
+	color: #F4ECE9;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	font: 400 .60rem 'Oswald', sans-serif;
+	color: #F4ECE9;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	font: 400 .60rem 'Oswald', sans-serif;
+	color: #F4ECE9;
+}
+:-moz-placeholder { /* Firefox 18- */
+	font: 400 .60rem 'Oswald', sans-serif;
+	color: #F4ECE9;
+}
+
+form input, form textarea {
+    background-color: #e0d8d6;
+	width: 100%;
+	padding: 13px 10px;
+    border-width: none;
+    border-style: none;
+    border-color: none;
+    border-image: none;
+	margin: 12px 0;
+}
+
+label{
+	font: 500 .7rem 'Oswald', sans-serif;
+}
+
+/*--------------------------------------------------------------
+1.5 - Lists
+-------------------------------------------------------------- */
+
+nav ul li{
+	font: 400 .75rem 'Oswald', sans-serif;
+}
+
+#services .col-1-3 li{
+	margin: 0 6px;
+	vertical-align: text-top;
+}
+
+.bg-green .col-1-3 ul li, nav ul li{
+	margin: 0 10px;
+}
+
+.bg-green .col-1-3 ul li a i{
+	font-size: 25px;
+}
+
+#services .grid li{
+	font: 400 .5rem 'Work Sans', sans-serif;
+}
 
 /*--------------------------------------------------------------
 3.0 - Content
 -------------------------------------------------------------- */
 
+.blk, nav ul li, .grid li, #services .col-1-3 li, .bg-green .col-1-3 li{
+	display: inline-block;
+}
+
 /*--------------------------------------------------------------
 3.1 - Site Structure (Site Header, Advertisement, Site Footer)
 -------------------------------------------------------------- */
 
-.wrapper{
-	width: 70%;
+.wrapper, .cntr-blk{
 	margin: 0 auto;
+}
+
+.wrapper{
+	width: 80%;
 }
 
 .row:after{
@@ -73,22 +341,72 @@
 	clear: both;
 }
 
-/*Grid Code*/
-.cntr-blk {
-	float: none;
-	margin: 0 auto;
+
+img[src="img/logo-wht.png"], #intro p{
+	margin-top: 10px;
 }
 
+.bg-green .col-1-3 ul, .after, .before{
+	margin-top: 50px;
+}
 
-.flex ul {
+body > header, .after, .before {
+	position: relative;
+}
+
+header .col-5-8{
+	margin: 0 132px;
+}
+
+/* PACKAGES */
+.after, .before {
+	top: 0;
+	left: 0;
+}
+
+.after:after {
+	background: url(../img/bg-packages.png) no-repeat top right;
+	right: -170px;
+}
+
+.before:before {
+	background: url(../img/bg-packages-reverse.png) no-repeat top right;
+	left: -170px;
+}
+
+.before:before, .after:after{
+	content: '';
+	-webkit-background-size: contain;
+	-ms-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	width: 300px;
+	position: absolute;
+	top: 0px;
+}
+
+.after .col-5-6 [class*="col-"], .before .col-5-6 [class*="col-"], #services ul, .bg-green .col-1-3 ul, .flex ul {
 	padding: 0;
 }
 
-.flex li:nth-child(odd){
-	text-align: center;
+.before .col-5-6{
+	margin-left: 10%;
 }
 
+#location{
+	margin: 100px 138.906px;
+}
 
+#instructors{
+	margin: 50px 138.906px 100px;
+}
+
+#services .col-1-2{
+	margin-bottom: 50px;
+}
+
+/*Grid Code*/
 .flex, .flex-1-2 {
   	display: flex;
 }
@@ -101,19 +419,24 @@
   flex: 1;
 }
 
-.flex .grid-child {
+.flex .grid {
   	display: grid;
 	width: 100%;
   	grid-template-columns: 50px auto 50px auto 50px auto; 
 	grid-template-rows: 50px;/* just ignore validation issue for now. In web III you'll discuss polyfills for older browsers */ 
 }
 
-.grid-item  {
+/*
+.flex .grid li {
   	width: 100%;
   	white-space: nowrap;
-	display: inline-block;
 }
+*/
 
+
+#map, .before:before, .after:after{
+	height: 400px;
+}
 
 /*PERMANT--------*/
 [class*='col-']{
@@ -152,7 +475,7 @@
 	width: 40%;
 }
 
-.col-3-5{
+.col-3-5, .bg-green form input{
 	width: 60%;
 }
 
@@ -248,40 +571,60 @@ figure {
 }
 
 svg{
-  background: url(../img/bg-wave.png)no-repeat -300px center; /* This applies the cresting wave, the negative background position will need to be updated */ 
-	/* need vendor prefixes */ 
-  background-size:contain; /* allows the bg image to respond to browser  */ 
-  display: block; /* need to include so that the wave and next div touch to create a seamless background color*/ 
+	background: url(../img/bg-wave.png)no-repeat -475px center; /* This applies the cresting wave, the negative background position will need to be updated */ 
+	-webkit-background: url(../img/bg-wave.png)no-repeat -475px center; 
+	-moz-background: url(../img/bg-wave.png)no-repeat -475px center;
+	-ms-background: url(../img/bg-wave.png)no-repeat -475px center;
+	-o-background: url(../img/bg-wave.png)no-repeat -475px center;
+	background-size:contain; /* allows the bg image to respond to browser  */ 
+	display: block; /* need to include so that the wave and next div touch to create a seamless background color*/ 
 }
 
 #bg-green {
-	background-image: url(../img/bg-ptrn.jpg);  /* applies the green background to the div where the text will be, this image will need to be updated to create a seamless repeating pattern  */ 
-	height: 300px; /* Once text is in place, remove and utilize padding or margin on text  */ 
+	background-image: url(../img/bg-ptrn.jpg);  
 	padding: 20px 0; /* padding is necessary so that the margins on the text do not exceed the parent  */ 
 }
 
-#hero { /* this ID will not be necessary once you have a column structure in place */ 
-	width: 50%;
-	margin: 0 auto;
-	position: relative; /* you will need to work with positioning to push the text on top of the wave  */ 
-	top: 150px;
-	left: 0;
+img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
+	max-width: 100px;
 }
 
-h1 {
-	text-indent: 30px;
+#about .col-1-4 div, #instructors .col-1-3 div{
+	min-height: 60px;
 }
 
 /*--------------------------------------------------------------
 5.0 - Utilities
 -------------------------------------------------------------- */
 
-.nf{
+/*--------------------------------------------------------------
+5.1 - Background Colors
+-------------------------------------------------------------- */
+
+.bg-green{
+	background-image: url(../img/bg-ptrn.jpg);
+	background-repeat: repeat-x;
+	padding: 10px;
+}
+
+/*--------------------------------------------------------------
+5.2 - Text Colors
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+5.3 - Text Sizes
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+5.4 - Alignments
+-------------------------------------------------------------- */
+
+.cntr-blk, .after .col-5-6, .before .col-5-6, header .col-5-8 {
 	float: none;
 }
 
-#map{
-	height: 400px;
+#push-right{
+	float: right;
 }
 
 
@@ -292,7 +635,8 @@ h1 {
 @media screen and (min-width: 1024px){
 	#intro {
 		position: absolute; 
-		top: 140px; 
+		top: 90px;
+		left: -10px;
 		width: 100%; 
 		z-index: -10;
 	}
@@ -302,6 +646,7 @@ h1 {
 	svg  {
 		display: none;
 	}
+	
 	#intro{
 	background-image: url(../img/bg-ptrn.jpg);  /* applies the green background to the div where the text will be, this image will need to be updated to create a seamless repeating pattern  */ 
 	height: 300px; /* Once text is in place, remove and utilize padding or margin on text  */ 
@@ -318,33 +663,121 @@ h1 {
 		width: 95%;
 	}
 	
+	/*Typography*/
+	header nav ul, p, .btn-blue{
+		text-align: center;
+	}
+	
+	header div.col-1-2{
+		text-align: center;
+	}
+	
+	address p, .col-5-6 p, .bg-green .col-1-3 ul{
+		text-align: left;
+	}
+	
 	h1 {
 		text-indent: 0;
+		font: 700 1.35rem 'Oswald', sans-serif;
 	}
 	
-	h1 br, img[src="img/logo-wht.png"]{
+	#intro p {
+		font: 500 1rem/1.25rem 'Work Sans', sans-serif;
+		padding: 0;
+		color: #F4ECE9;
+	}
+	
+	.bg-green .col-2-3 p{
+		font: 600 .9rem 'Work Sans', sans-serif;
+	}
+	
+	header .col-5-8 {
+   		 float: none;
+	}
+	
+	p{
+		font: 400 .75rem/1rem 'Work Sans', sans-serif;
+	}
+	
+	/*Utilities*/
+	
+	.blk, .blk a{
+		clear: both;
+	}
+	
+	.blk, .blk a, #btn-outline-blue{
+		display: block;
+	}
+	
+	/*Site Structure*/
+	
+	h1 br, footer div.row > .col-1-3:first-child, .after:after, .before:before{
 		display: none;
 	}
-
 	
-	.col-4-7{
-		margin: 0;
+	.flex .grid {
+  		grid-template-columns: 50px auto 50px auto;
 	}
 	
-	.col-1-2, .col-1-3, .col-2-3, .col-4-7{
+	ul.grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr 1fr 1fr; 
+	}
+	
+	/*Width*/
+	
+	.col-1-2, .col-1-3, .col-2-3, .col-4-7, .col-5-6, .col-5-8{
 		width: 100%;
 	}
 	
-	.col-1-4, .col-1-6{
+	.col-1-4, .col-1-6, footer .col-1-3{
 		width: 50%;
 	}
 	
-	.col-1-3, .col-2-3{
-		padding-right: 0; /*Will be grouped*/
+	img[src="img/logo-blue.png"]{
+		max-width: 70px;
 	}
 	
-	.flex .grid-child {
-  		grid-template-columns: 50px auto 50px auto;
+	/*Padding*/
+	
+	header nav ul{
+		padding-left: 0;
+	}
+	
+	.col-1-3, .col-2-3{
+		padding-right: 0;
+	}
+	
+	header div.col-1-2{
+		padding-bottom: 0;
+	}
+	
+	/*Margin*/
+	
+	.bg-green h2, #intro p{
+		margin-bottom: 0;
+	}
+	
+	h1, #about .col-1-4, #instructors, #location, .before .col-5-6, .col-4-7, header .col-5-8{
+		margin: 0;
+	}
+	
+	#article p{
+		margin-top: 20px;
+	}
+	
+	#about{
+		margin-top: 50px;
+	}
+	
+	.bg-green .col-2-3 p{
+		margin-top: 0;
+	}
+	
+	.bg-green form input{
+		width: 100%;
+		margin-bottom: 20px;
 	}
 }
 
