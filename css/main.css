@@ -54,11 +54,11 @@ body, nav ul li a, a[href="tel:+6478257873"], #btn-outline-blue, .bg-green .col-
 1.0 - Typography
 -------------------------------------------------------------- */
 
-h1, h2, input[placeholder="email"], .btn-outline-wht, #services .grid li, #pkg-lead-in, h3, .btn-blue, #services .col-1-3 > p, #btn-outline-blue, label{
+h1, h2, input[placeholder="email"], .btn-outline-wht, #services .grid li, #pkg-lead-in, h3, .btn-blue, #services .col-1-3 > p, #btn-outline-blue, label, #location div.col-1-2 + div.col-1-2 p{
 	text-transform: uppercase;
 }
 
-.flex li:nth-child(odd), h2, .col-2-3 p, .bg-green .col-1-2 p, #about .col-1-4, #services .col-1-3 > p, #instructors .col-1-3, #services div[class="col-1-2 cntr-blk"], #article, .bg-green .col-1-3 ul{
+.flex li:nth-child(odd), h2, .col-2-3 p, .bg-green .col-1-2 p, #about .col-1-4, #services .col-1-3 > p, #instructors .col-1-3, #services div[class="col-1-2 cntr-blk"], #article, .bg-green .col-1-3 ul, #location div.col-1-2 + div.col-1-2 p{
 	text-align: center;
 }
 
@@ -74,16 +74,16 @@ a[href="tel:+6478257873"]:hover, h3 span, h4, #intro p{
 	background-color: #158F80;	
 }
 
-h3 span, h4, #services .col-1-2 p:first-child{
-	margin-bottom: 0;
-}
-
 .bg-green address p, nav ul{
 	text-align: right;
 }
 
 h4, #services ul{
 	margin-top: 0;
+}
+
+h3 span, h4, #services .col-1-2 p:first-child{
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -93,7 +93,7 @@ h4, #services ul{
 h1 {
 	text-indent: 30px;
 	font: 700 3rem/3rem 'Oswald', sans-serif;
-	margin: .67em 60px 0;
+	margin: .67em 70px 0;
 }
 
 h2{
@@ -164,10 +164,9 @@ strong{
 	padding: 7px;
 	font: 600 .7rem 'Oswald', sans-serif;
 	letter-spacing: .05rem;
-
 }
 
-#services .col-1-3  li p{
+#services li p{
 	margin-top: 7px;
 }
 
@@ -179,8 +178,12 @@ strong{
 	text-align: left;
 }
 
-address p{
+address p, #location div.col-1-2 + div.col-1-2 p{
 	margin: 0;
+}
+
+address{
+	margin-top: 12.5px;
 }
 
 .bg-green address p:first-child{
@@ -189,6 +192,10 @@ address p{
 
 #services .col-5-8 p{
 	margin: 0 0 30px;
+}
+
+#location div.col-1-2 + div.col-1-2 p{
+	font: 600 1rem 'Oswald', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -216,7 +223,7 @@ nav ul li a:hover{
     border: 2px solid #F4ECE9;
 }
 
-.btn-outline-wht:hover, .btn-blue:hover{
+.btn-outline-wht:hover, .btn-blue:hover, .bg-green form input{
 	background-color: #147A6D;
 }
 
@@ -249,12 +256,8 @@ label[for="email"]{
 }
 
 .bg-green form input {
-    background-color: #147A6D;
 	padding: 14px;
-    border-width: none;
-    border-style: none;
-    border-color: none;
-    border-image: none;
+    border: none;
 	margin: 0 40px 0 0;
 }
 
@@ -277,13 +280,9 @@ label[for="email"]{
 
 form input, form textarea {
     background-color: #e0d8d6;
-	width: 100%;
 	padding: 13px 10px;
-    border-width: none;
-    border-style: none;
-    border-color: none;
-    border-image: none;
-	margin: 12px 0;
+    border: none;
+	margin: 8px 0;
 }
 
 label{
@@ -319,7 +318,7 @@ nav ul li{
 3.0 - Content
 -------------------------------------------------------------- */
 
-.blk, nav ul li, .grid li, #services .col-1-3 li, .bg-green .col-1-3 li{
+.blk, nav ul li, .grid li, #services .col-1-3 li, .bg-green .col-1-3 li, #article p{
 	display: inline-block;
 }
 
@@ -356,6 +355,10 @@ body > header, .after, .before {
 
 header .col-5-8{
 	margin: 0 132px;
+}
+
+#location div.col-1-2 + div.col-1-2{
+	padding-bottom: 0;
 }
 
 /* PACKAGES */
@@ -395,11 +398,11 @@ header .col-5-8{
 }
 
 #location{
-	margin: 100px 138.906px;
+	margin: 100px 139px;
 }
 
 #instructors{
-	margin: 50px 138.906px 100px;
+	margin: 50px 139px 100px;
 }
 
 #services .col-1-2{
@@ -421,17 +424,14 @@ header .col-5-8{
 
 .flex .grid {
   	display: grid;
-	width: 100%;
   	grid-template-columns: 50px auto 50px auto 50px auto; 
 	grid-template-rows: 50px;/* just ignore validation issue for now. In web III you'll discuss polyfills for older browsers */ 
 }
 
-/*
-.flex .grid li {
-  	width: 100%;
-  	white-space: nowrap;
+
+.flex .grid, form input, form textarea{
+	width: 100%; 
 }
-*/
 
 
 #map, .before:before, .after:after{
@@ -575,8 +575,12 @@ svg{
 	-webkit-background: url(../img/bg-wave.png)no-repeat -475px center; 
 	-moz-background: url(../img/bg-wave.png)no-repeat -475px center;
 	-ms-background: url(../img/bg-wave.png)no-repeat -475px center;
-	-o-background: url(../img/bg-wave.png)no-repeat -475px center;
+	-o-background: url(../img/bg-wave.png)no-repeat -475px center;	
 	background-size:contain; /* allows the bg image to respond to browser  */ 
+	-webkit-background-size:contain;
+	-moz-background-size:contain;
+	-ms-background-size:contain;
+	-o-background-size:contain;
 	display: block; /* need to include so that the wave and next div touch to create a seamless background color*/ 
 }
 
@@ -602,18 +606,13 @@ img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
 -------------------------------------------------------------- */
 
 .bg-green{
-	background-image: url(../img/bg-ptrn.jpg);
-	background-repeat: repeat-x;
+	background: url(../img/bg-ptrn.jpg) repeat-x;
+	-webkit-background: url(../img/bg-ptrn.jpg) repeat-x;
+	-moz-background: url(../img/bg-ptrn.jpg) repeat-x;
+	-ms-background: url(../img/bg-ptrn.jpg) repeat-x;
+	-o-background: url(../img/bg-ptrn.jpg) repeat-x;
 	padding: 10px;
 }
-
-/*--------------------------------------------------------------
-5.2 - Text Colors
--------------------------------------------------------------- */
-
-/*--------------------------------------------------------------
-5.3 - Text Sizes
--------------------------------------------------------------- */
 
 /*--------------------------------------------------------------
 5.4 - Alignments
@@ -664,11 +663,7 @@ img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
 	}
 	
 	/*Typography*/
-	header nav ul, p, .btn-blue{
-		text-align: center;
-	}
-	
-	header div.col-1-2{
+	header nav ul, p, .btn-blue, header div.col-1-2{ 
 		text-align: center;
 	}
 	
@@ -705,7 +700,7 @@ img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
 		clear: both;
 	}
 	
-	.blk, .blk a, #btn-outline-blue{
+	.blk, .blk a, #btn-outline-blue, #article p{
 		display: block;
 	}
 	
@@ -721,13 +716,12 @@ img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
 	
 	ul.grid {
 		display: grid;
-		width: 100%;
 		grid-template-columns: 1fr 1fr 1fr; 
 	}
 	
 	/*Width*/
 	
-	.col-1-2, .col-1-3, .col-2-3, .col-4-7, .col-5-6, .col-5-8{
+	.col-1-2, .col-1-3, .col-2-3, .col-4-7, .col-5-6, .col-5-8, ul.grid{
 		width: 100%;
 	}
 	
@@ -776,8 +770,15 @@ img[src="img/logo-blue.png"], img[src="img/logo-wht.png"]{
 	}
 	
 	.bg-green form input{
-		width: 100%;
 		margin-bottom: 20px;
+	}
+	
+	address{
+		margin: 5px 0 60px;
+	}
+	
+	#location form p{
+		margin-bottom: 60px;
 	}
 }
 
